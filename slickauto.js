@@ -2,7 +2,7 @@
   "use strict";
 
   //create temporal object to get slick object
-  var getSlick = function () {
+  var getSlick = function ($) {
     var $tmp = $("<div>").slick();
     var slick = $tmp[0].slick.constructor;
     $tmp.slick("unslick");
@@ -10,7 +10,7 @@
   };
 
   if ($.fn.slick) {
-    var Slick = getSlick();
+    var Slick = getSlick(jQuery);
     if (Slick) {
       //hook checkResponsive method
       var checkResponsiveOrig = Slick.prototype.checkResponsive;
@@ -51,7 +51,7 @@
           _.options.variableWidth
         ) {
           var targetSlide = _.$slider
-            .children(".home-map-tab-link.is-relative")
+            .find(".home-map-tab-link.is-relative")
             .eq(slideIndex);
           if (targetSlide[0]) {
             var diff = 0;
@@ -71,4 +71,4 @@
       };
     }
   }
-})(jQuery);
+})(jQuery.noConflict());
