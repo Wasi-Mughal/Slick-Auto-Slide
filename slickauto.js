@@ -50,8 +50,8 @@
           !_.options.infinite &&
           _.options.variableWidth
         ) {
-          var targetSlide = _.$slideTrack
-            .children(".slick-slide")
+          var targetSlide = _.$slider
+            .children(".home-map-tab-link.is-relative")
             .eq(slideIndex);
           if (targetSlide[0]) {
             var diff = 0;
